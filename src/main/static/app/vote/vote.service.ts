@@ -39,7 +39,7 @@ export class VoteService {
     }
 
     rateSession(session: Session, ratingNumber: number) {
-      var attendee: any = { "name" : "Test User"};
+      var attendee: any = { "id" : "user1", "name" : "Test User1" };
       this.http.post(this.endPoint.url + "/attendee", attendee ).toPromise().then(
         response => this.makeVoteCall(session, response, ratingNumber)
       ).catch(error => this.handleError(error));
